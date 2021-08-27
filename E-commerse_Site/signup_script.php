@@ -7,16 +7,16 @@ $select_query = "SELECT id,email from users";
 $select_query_result = mysqli_query($con, $select_query);
 
 
-if(mysqli_num_rows($select_query_result) === 0){
-    echo 'There is no user with the email and password';
-}else{
-    $row = mysqli_fetch_array($select_query_result);
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
-    if (isset($_SESSION['email'])) {
-        header('location: product.php');
-        }
-}
+// if(mysqli_num_rows($select_query_result) === 0){
+//     echo 'There is no user with the email and password';
+// }else{
+//     $row = mysqli_fetch_array($select_query_result);
+//     $_SESSION['email'] = $email;
+//     $_SESSION['password'] = $password;
+//     if (isset($_SESSION['email'])) {
+//         header('location: product.php');
+//         }
+// }
 $email = $_POST['email'];
 $regex_email = "";
 if(!preg_match($regex_email, $email)){
@@ -54,7 +54,7 @@ $select_query_result = mysqli_query($con, $select_query);
               $_SESSION['city'] = $email;
                $_SESSION['email'] = $email;
            if (isset($_SESSION['email'])) {
-        header('location: product.php');
+        header('location: login.php');
         }
          
         }  
